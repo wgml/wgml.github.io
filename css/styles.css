@@ -78,6 +78,11 @@ article.a {
   background-color: #E9D9D3;
 }
 
+article > p {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 h2 {
   font-size: 100%;
   padding: 10px;

@@ -8,4 +8,4 @@ defaults:
       author: "Wojtek Gumuła"
       email: "me@wgml.pl"
       repository_url: "https://github.com/wgml/wgml.github.io"
-      
+      title: "cat /etc/profile"
