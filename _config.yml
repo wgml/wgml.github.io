@@ -1,0 +1,11 @@
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      site_url: "wgml.pl"
+      author: "Wojtek Gumuła"
+      email: "me@wgml.pl"
+      repository_url: "https://github.com/wgml/wgml.github.io"
+      

@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <title>[{{ page.site_url }}] {{page.title}}</title>
+
+  <meta name="description" content="Random bits">
+  <meta name="author" content="{{ page.author }}">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Open+Sans:400" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/hedgehog-32.png" />
+</head>
+<body>
+  <header>
+    <a href="/" id="root_url">[{{ page.site_url }}]</a>
+    <h1 class="monospace">> {{ page.title }}</h1>
+    <h2>Random facts about me and all!</h2>
+    <nav>
+      <ul>
+        <li><a href="/">Root</a></li>
+        <li><a href="/about.html">About me</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/files/resume.pdf">Resume</a></li>
+        <li><a target="_blank" href="https://github.com/wgml">Github</a></li>
+      </ul>
+    </nav>
+    <div id="cursor-wrap">
+      <span id="cursor">> </span>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer>
+    Created by {{ page.author }} with help of <a href="https://jekyllrb.com/" target="_blank"> jekyll</a>, around {{ 'now' | date: "%Y" }} or so. You can se the source <a href="{{ page.repository_url }}" target="_blank">there</a>. By the way, you can <a href="mailto:{{ page.email }}">send me a message</a>, too!
+    {{ 'ls'}}
+  </footer>
+</body>
+</html>

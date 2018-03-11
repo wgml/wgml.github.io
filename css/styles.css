@@ -1,0 +1,143 @@
+/*@import "compass/css3";*/
+
+body {
+  background-color: #FFF9F6;
+
+  font-family: 'Open Sans', sans-serif;  font-style: normal;
+  font-weight: 400;
+
+  line-height: 150%;
+
+  max-width: 720px;
+  margin: 20px auto;
+}
+
+a {
+  font-family: 'Fira Mono', monospace;
+  text-decoration: none;
+  color:inherit;
+  background-color: #E9D9D3;
+  padding: 2px;
+}
+
+header {
+  background-color: #FFF2EC;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0;
+
+  padding: 20px;
+}
+
+#root_url {
+  font-size: 150%;
+  padding: 3px 6px 3px 6px;
+  margin-top: 100px;
+}
+
+nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li {
+  display: inline;
+  padding: 5px;
+}
+
+.active {
+  background-color: #FFD5C4;
+}
+
+header > h1 {
+  font-size: 320%;
+  line-height: 100%;
+}
+
+header > h2 {
+  font-size: 120%;
+  font-weight: normal;
+  margin-top: -20px;
+}
+
+nav {
+  text-transform: lowercase;
+}
+
+article {
+  background-color: #FFF2EC;
+  text-align: justify;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+article.a {
+  background-color: #E9D9D3;
+}
+
+h2 {
+  font-size: 100%;
+  padding: 10px;
+}
+
+h2:before {
+  content: "> ";
+}
+
+.posts li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timestamp {
+  color: #afafaf;
+}
+.monospace {
+  font-family: 'Fira Mono', monospace;
+}
+
+footer {
+  position: relative;
+}
+
+#cursor {
+  font-family: monospace;
+}
+
+#cursor:after {
+  content:"_";
+  opacity: 0;
+  animation: cursor-animation 1s infinite;
+}
+
+@keyframes cursor-animation {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#cursor-wrap {
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 120%;
+  padding-top: 10px;
+  padding-left: 0px;
+  font-weight: bold;
+}
