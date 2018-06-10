@@ -101,6 +101,7 @@ h2:before {
 .timestamp {
   color: #afafaf;
 }
+
 .monospace {
   font-family: 'Fira Mono', monospace;
 }
@@ -145,4 +146,12 @@ footer {
   padding-top: 10px;
   padding-left: 0px;
   font-weight: bold;
+}
+
+#command-input {
+  width: 0;
+  outline: none;
+  border: none;
+  background-color: #FFF2EC;
+  color: #FFF2EC;
 }
