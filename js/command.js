@@ -3,49 +3,66 @@ window.onkeyup = keyListener;
 function keyListener(e) {
   console.log(e);
   if (acceptedKey(e)) {
-    var s = document.getElementById("command-text");
+    console.log("Event is accepted")
+    var s = document.getElementById("cursor");
     if (e.keyCode != 13) {
       s.innerHTML = s.innerHTML + e.key;
     }
     
-    s = document.getElementById("command-input");
+    s = document.getElementById("cursor-input");
     s.value = "";
     if (e.keyCode == 13) {
       executeCommand();
     }
+
+    s.focus();
   }
 }
 
 function acceptedKey(event) {
-  if (event.target == null || event.target.id !== "command-input") {
+  if (event.target == null || event.target.id !== "cursor-input") {
     return false;
   }
+
+  if (event.keyCode == 13) {
+    return true; // Enter key
+  }
+
+  if (event.key.length != 1) {
+    return false;
+  }
+
   return true;
 }
 
+function processCommand(cmd) {
+  return cmd + ": command not found";
+}
+
 function executeCommand() {
-  var commands = document.getElementById("commands");
-  var cursorWrap = document.getElementById("cursor-wrap");
-  var newCursorWrap = cursorWrap.cloneNode(true);
+  var shell = document.getElementById("shell");
   var cursor = document.getElementById("cursor");
-  var input = document.getElementById("command-input").parentElement;
+  var input = document.getElementById("cursor-input");
+  var lastCommand = cursor.parentElement;
+  var nextCommand = lastCommand.cloneNode(true);
 
-  console.log(commands);
-  console.log(cursor);
-  console.log(input);
+  var cmd = cursor.innerText;
 
-  cursorWrap.removeChild(input);
-  cursorWrap.removeChild(cursor);
+  cursor.removeChild(input);
+  cursor.removeAttribute("id");
 
-  cursorWrap.removeAttribute("id");
-  cursorWrap.removeAttribute("onclick");
-  cursorWrap.classList.add("entered-command");
-  cursorWrap.innerHTML += "<span><br/>error: command not found</span>";
+  lastCommand.removeAttribute("onclick");
+  
+  var cmdResult = processCommand(cmd);
+  shell.innerHTML += "<p class=\"command-result\">" + cmdResult + "</p>";
 
-  commands.appendChild(newCursorWrap);
+  shell.appendChild(nextCommand);
+  var h = document.getElementById("cursor").innerHTML;
+  document.getElementById("cursor").innerHTML = h.substr(0, h.length - cmd.length);
+  focusOnCommand();
 }
 
 function focusOnCommand() {
   console.log("focusOnCommand");
-  document.getElementById("command-input").focus();
+  document.getElementById("cursor-input").focus();
 }

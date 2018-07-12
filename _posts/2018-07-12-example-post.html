@@ -1,0 +1,67 @@
+---
+header: Page layout example post
+categories: examples
+---
+
+<article>
+        <h2 class="monospace">Some blog post</h2>
+        <p>
+          <h3 class="monospace">Sub-header!</h3>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non neque suscipit augue congue posuere eu vel massa. Aliquam
+          venenatis ultrices bibendum. Donec velit sem, vulputate eget libero vel, aliquet semper mi. In molestie turpis sed
+          massa consequat fringilla. Nunc vestibulum, erat ac ultricies vehicula, tellus lectus tempus dui, ac bibendum nunc
+          velit sed quam. Vestibulum ut felis at ipsum scelerisque maximus id id erat. In mollis quis est suscipit vulputate.
+          Maecenas vitae pulvinar mi, eu accumsan enim. Praesent vitae tincidunt magna, non fermentum urna. Proin non lorem tincidunt
+          nulla viverra eleifend. Duis eget semper turpis.
+        </p>
+        <p>
+          <h3 class="monospace">Sample code</h3>
+          <pre><code class="python">import urllib2
+    
+    url = "http://download.thinkbroadband.com/10MB.zip"
+    
+    file_name = url.split('/')[-1]
+    u = urllib2.urlopen(url)
+    f = open(file_name, 'wb')
+    meta = u.info()
+    file_size = int(meta.getheaders("Content-Length")[0])
+    print "Downloading: %s Bytes: %s" % (file_name, file_size)
+    
+    file_size_dl = 0
+    block_sz = 8192
+    while True:
+        buffer = u.read(block_sz)
+        if not buffer:
+            break
+    
+        file_size_dl += len(buffer)
+        f.write(buffer)
+        status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
+        status = status + chr(8)*(len(status)+1)
+        print status,
+    
+    f.close()</code></pre>
+        </p>
+        <p>
+          <h3>Another wild subheader appears!</h3>
+          Aliquam erat volutpat. Fusce vitae pulvinar risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+          cubilia Curae; Phasellus eu auctor purus, in eleifend nunc. Nam in suscipit leo. Integer efficitur maximus dignissim.
+          Vestibulum non hendrerit massa, quis dictum magna. Vivamus malesuada, purus eu posuere vehicula, velit libero varius
+          libero, sed malesuada risus justo eget mi. Nam at enim tincidunt, laoreet sem eu, scelerisque augue. Mauris ornare
+          dolor ut consequat varius. Duis ac neque sit amet lorem sagittis gravida. Duis imperdiet hendrerit enim, at posuere
+          neque tincidunt eu. Nam venenatis tincidunt ipsum a aliquet. Fusce eu maximus felis, eget vehicula est. Cras scelerisque
+          augue non leo ultrices fermentum.
+        </p>
+        <p>
+          <h3 class="monospace">Liiiists</h3>
+          <ol>Ordered list
+            <li>first</li>
+            <li>second</li>
+          </ol>
+          <ul>Unordered list
+            <li>first</li>
+            <li>second</li>
+          </ul>
+        </p>
+      </article>
+    
