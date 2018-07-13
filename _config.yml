@@ -9,3 +9,21 @@ defaults:
       email: "me@wgml.pl"
       repository_url: "https://github.com/wgml/wgml.github.io"
       title: "cat /etc/profile"
+      navbar:
+        - 
+          url: "/"
+          name: "root"
+        - 
+          url: "/about.html"
+          name: "about"        
+        - 
+          url: "/projects.html"
+          name: "projects"        
+        - 
+          url: "/files/resume.pdf"
+          name: "resume"
+          args: "target=\"_blank\""
+        - 
+          url: "https://github.com/wgml"
+          name: "github"
+          args: "target=\"_blank\""

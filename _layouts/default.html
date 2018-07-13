@@ -1,3 +1,10 @@
+---
+menubar_elements:
+- a
+- b
+- c
+---
+
 <!doctype html>
 
 <html lang="en">
@@ -16,25 +23,15 @@
 </head>
 <body>
   <header>
-    <a href="#" id="root-url">[wgml.pl]</a>
-    <h1 class="monospace">> cat /etc/profile</h1>
-    <nav>
+    <a href="{{site.url}}" id="root-url">[wgml.pl]</a>
+    <h1 class="monospace">> {{ page.title }}</h1>
+    <nav id="navbar">
       <ul>
+        {% for e in page.navbar %}
         <li>
-          <a href="/" class="active-url">Root</a>
+          <a href="{{ e.url }}"{% if  e.url == page.url %} class="active-url"{% endif %} {{ e.args }}>{{ e.name }}</a>
         </li>
-        <li>
-          <a href="/about.html">About me</a>
-        </li>
-        <li>
-          <a href="/projects.html">Projects</a>
-        </li>
-        <li>
-          <a target="_blank" href="./files/resume.pdf">Resume</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://github.com/wgml">Github</a>
-        </li>
+        {% endfor %}
       </ul>
     </nav>
     <div id="shell" class="monospace">
@@ -50,9 +47,10 @@
 {{ content }}
 
 <footer>
-  <a href="https://github.com/wgml/wgml.github.io">Source</a>
+  {{ page.author }}, 2018. 
+  <a href="{{ page.repository_url }}">Source</a>.
   By the way, you can
-  <a href="mailto:me@wgml.pl">send me a message</a>, too!
+  <a href="mailto:{{ page.email }}">send me a message</a>.
 </footer>
 </body>
 </html>

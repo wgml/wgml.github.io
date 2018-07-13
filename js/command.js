@@ -5,7 +5,14 @@ function keyListener(e) {
   if (acceptedKey(e)) {
     console.log("Event is accepted")
     var s = document.getElementById("cursor");
-    if (e.keyCode != 13) {
+
+    if (e.keyCode == 8) {
+      var t = s.innerHTML;
+      if (s.innerText.length > 0) {
+        s.innerHTML = t.substring(0, t.length - 1)
+      }
+    }
+    else if (e.keyCode != 13) {
       s.innerHTML = s.innerHTML + e.key;
     }
     
@@ -28,6 +35,9 @@ function acceptedKey(event) {
     return true; // Enter key
   }
 
+  if (event.keyCode == 8) {
+    return true; // Backspace
+  }
   if (event.key.length != 1) {
     return false;
   }
@@ -36,6 +46,19 @@ function acceptedKey(event) {
 }
 
 function processCommand(cmd) {
+  if (cmd == "rm -rf /") {
+    var body = document.body;
+    body.parentNode.removeChild(body);
+    throw '';
+  }
+  if (cmd.startsWith("rm ")) {
+    var args = cmd.split(" ");
+    for(i = 1; i < args.length; i++) {
+      var e = document.getElementById(args[i]);
+      e.parentNode.removeChild(e);
+    }
+    return "";
+  }
   return cmd + ": command not found";
 }
 
@@ -52,8 +75,11 @@ function executeCommand() {
   cursor.removeAttribute("id");
 
   lastCommand.removeAttribute("onclick");
-  
-  var cmdResult = processCommand(cmd);
+  var cmdResult = "";
+  try {
+    cmdResult = processCommand(cmd);
+  } catch (e) {}
+
   shell.innerHTML += "<p class=\"command-result\">" + cmdResult + "</p>";
 
   shell.appendChild(nextCommand);

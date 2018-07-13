@@ -19,7 +19,7 @@ a {
   text-decoration: none;
   color:inherit;
   background-color: #E9D9D3;
-  padding: 2px 6px 2px 6px;
+  padding: 0px 6px 0px 6px;
 }
 
 pre {
@@ -78,6 +78,11 @@ header p {
 
 header p.command-line:before {
   content: "> "; 
+}
+
+#shell {
+  max-height: 200px;
+  overflow-y: hidden;
 }
 
 .command-line {
