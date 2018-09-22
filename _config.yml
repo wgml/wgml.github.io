@@ -27,3 +27,4 @@ defaults:
           url: "https://github.com/wgml"
           name: "github"
           args: "target=\"_blank\""
+highlighter: rouge

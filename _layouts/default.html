@@ -1,8 +1,4 @@
 ---
-menubar_elements:
-- a
-- b
-- c
 ---
 
 <!doctype html>
@@ -17,14 +13,15 @@ menubar_elements:
   <meta name="author" content="Wojtek Gumula">
 
   <link rel="stylesheet" href="/css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+  <link rel="stylesheet" href="/css/highlight/highlight.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300,400,700" rel="stylesheet">
   <link rel="icon" type="image/png" href="/images/hedgehog-32.png" />
   <script type="text/javascript" src="/js/command.js"></script>
 </head>
 <body>
   <header>
     <a href="{{site.url}}" id="root-url">[wgml.pl]</a>
-    <h1 class="monospace">> {{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
     <nav id="navbar">
       <ul>
         {% for e in page.navbar %}
@@ -34,14 +31,11 @@ menubar_elements:
         {% endfor %}
       </ul>
     </nav>
-    <div id="shell" class="monospace">
-      <p class="command-line">
-        <code class="bash"># Making yesterday tomorrow</code>
-      </p>
+    <!--div id="shell" class="monospace">
       <p class="command-line" onclick="focusOnCommand(); return false;">
         <code id="cursor" class="bash"><input id="cursor-input"/></code>
       </p>
-    </div>
+    </div-->
   </header>
 
 {{ content }}

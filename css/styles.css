@@ -3,15 +3,16 @@
 body {
   background-color: #FFF9F6;
 
-  font-family: 'Open Sans', sans-serif;  font-style: normal;
+  font-family: 'Roboto', sans-serif;  font-style: normal;
   font-weight: lighter;
-
-  line-height: 120%;
+  line-height: 1.5em;
+  font-size: 16pt;
 
   max-width: 900px;
   margin: 20px auto;
   padding-left: 10px;
   padding-right: 10px;
+
 }
 
 a {
@@ -19,7 +20,7 @@ a {
   text-decoration: none;
   color:inherit;
   background-color: #E9D9D3;
-  padding: 0px 6px 0px 6px;
+  padding: 1px 3px 1px 3px;
 }
 
 pre {
@@ -35,18 +36,34 @@ code {
   font-family: 'Roboto Mono', monospace;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  font-size: 100%;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 100%;
+  font-weight: bolder;
+}
+
+h1:before {
+  content: "> ";
+}
+
+
 header {
   background-color: #FFF2EC;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 0;
   padding: 20px;
+  font-size: 24pt;
+  line-height: 80%;
 }
 
 #root-url {
-  font-size: 150%;
-  padding: 3px 6px 3px 6px;
-  margin-top: 100px;
+  padding: 5px;
 }
 
 nav > ul {
@@ -69,6 +86,7 @@ nav > ul > li {
 header > h1 {
   font-size: 200%;
   line-height: 100%;
+  margin: 0.2em;
 }
 
 header p {
@@ -136,20 +154,6 @@ input#cursor-input {
 }
 nav {
   text-transform: lowercase;
-}
-
-h2 {
-  font-size: 100%;
-  padding: 10px;
-}
-
-h3 {
-  font-size: 100%;
-  font-weight: bolder;
-}
-
-h2:before {
-  content: "> ";
 }
 
 article {
