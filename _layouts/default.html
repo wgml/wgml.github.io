@@ -13,10 +13,11 @@
   <meta name="author" content="Wojtek Gumula">
 
   <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/highlight/highlight.css">
+  <link rel="stylesheet" href="/css/prism.css">
+
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300,400,700" rel="stylesheet">
+  
   <link rel="icon" type="image/png" href="/images/hedgehog-32.png" />
-  <script type="text/javascript" src="/js/command.js"></script>
 </head>
 <body>
   <header>
@@ -31,11 +32,6 @@
         {% endfor %}
       </ul>
     </nav>
-    <!--div id="shell" class="monospace">
-      <p class="command-line" onclick="focusOnCommand(); return false;">
-        <code id="cursor" class="bash"><input id="cursor-input"/></code>
-      </p>
-    </div-->
   </header>
 
 {{ content }}
@@ -46,5 +42,7 @@
   By the way, you can
   <a href="mailto:{{ page.email }}">send me a message</a>.
 </footer>
+
+  <script src="/js/prism.js"></script>
 </body>
 </html>

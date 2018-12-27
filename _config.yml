@@ -10,21 +10,23 @@ defaults:
       repository_url: "https://github.com/wgml/wgml.github.io"
       title: "cat /etc/profile"
       navbar:
-        - 
+        -
           url: "/"
           name: "root"
-        - 
+        -
           url: "/about.html"
-          name: "about"        
-        - 
+          name: "about"
+        -
           url: "/projects.html"
-          name: "projects"        
-        - 
+          name: "projects"
+        -
           url: "/files/resume.pdf"
           name: "resume"
           args: "target=\"_blank\""
-        - 
+        -
           url: "https://github.com/wgml"
           name: "github"
           args: "target=\"_blank\""
-highlighter: rouge
+highlighter: none
+markdown: kramdown
+permalink: /blog/:title.html

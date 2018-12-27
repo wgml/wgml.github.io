@@ -95,7 +95,7 @@ header p {
 }
 
 header p.command-line:before {
-  content: "> "; 
+  content: "> ";
 }
 
 #shell {
@@ -176,6 +176,7 @@ article > p {
 article pre {
   padding: 10px;
   background-color: rgb(241, 231, 226);
+  white-space: pre;
 }
 
 .posts li {
