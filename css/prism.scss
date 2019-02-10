@@ -1,3 +1,7 @@
+---
+---
+
+// start content
 /* PrismJS 1.15.0
 https://prismjs.com/download.html#themes=prism-solarizedlight&languages=clike+c+cpp+docker+git+go+java+makefile+python+rust&plugins=line-highlight+line-numbers+toolbar+show-language */
 /*
@@ -33,18 +37,18 @@ green     #859900
 code[class*="language-"],
 pre[class*="language-"] {
   color: #657b83; /* base00 */
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: "Roboto Mono", monospace;
   text-align: left;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
 
   line-height: 1.5;
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
 
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -71,13 +75,11 @@ pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  border-radius: 0.3em;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
-  border-radius: 0.3em;
 }
 
 .token.comment,
