@@ -37,7 +37,7 @@
 {{ content }}
 
 <footer>
-  {{ page.author }}, 2018. 
+  {{ page.author }}, <span title="Built {{ site.time | date: '%Y-%m-%d %T' }}">{{ site.time | date: '%Y' }}</span>. 
   <a href="{{ page.repository_url }}">Source</a>.
   By the way, you can
   <a href="mailto:{{ page.email }}">send me a message</a>.
