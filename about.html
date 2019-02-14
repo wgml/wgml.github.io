@@ -1,0 +1,9 @@
+---
+title: "cat ~/etc/profile"
+---
+
+<article>
+  {% capture about-me %}{% include about-me.md %}{% endcapture %}
+  {{ about-me | markdownify }}
+</article>
+{% include projects.html %}

@@ -3,5 +3,7 @@ layout: default
 ---
 
 <article>
-{{ content }}
+  <h1>{{ page.header }}
+  <span class="timestamp" style="display: block">{{ page.date | date: '%Y-%m-%d'}}</span></h1>
+  {{ content }}
 </article>

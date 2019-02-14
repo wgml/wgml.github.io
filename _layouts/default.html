@@ -6,8 +6,18 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134389741-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134389741-1');
+  </script>
+
   <meta charset="utf8">
-  <title>[{{ page.site_url }}] {{page.title}}</title>
+  <title>[{{ page.site_url }}] {% if page.header %}{{ page.header }} {% else %}{{ page.title }}{% endif %}</title>
 
   <meta name="description" content="Random bits">
   <meta name="author" content="Wojtek Gumula">
@@ -21,8 +31,9 @@
 </head>
 <body>
   <header>
-    <a href="{{site.url}}" id="root-url">[wgml.pl]</a>
+    <a href="{{site.url}}" id="root-url">[Wojtek Gumuła]</a>
     <h1>{{ page.title }}</h1>
+
     <nav id="navbar">
       <ul>
         {% for e in page.navbar %}
@@ -37,6 +48,7 @@
 {{ content }}
 
 <footer>
+ 
   {{ page.author }}, <span title="Built {{ site.time | date: '%Y-%m-%d %T' }}">{{ site.time | date: '%Y' }}</span>. 
   <a href="{{ page.repository_url }}">Source</a>.
   By the way, you can

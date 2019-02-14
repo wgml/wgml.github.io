@@ -2,10 +2,6 @@
 ---
 
 <article>
-  {% capture about-me %}{% include about-me.md %}{% endcapture %}
-  {{ about-me | markdownify }}
-</article>
-<article>
   <h1>Posts</h1>
   <ul class="posts">
     {% for post in site.posts %}
@@ -16,4 +12,9 @@
       None (yet!).
     {% endif %}
   </ul>
+</article>
+
+<article>
+  {% capture about-me %}{% include about-me.md %}{% endcapture %}
+  {{ about-me | markdownify }}
 </article>

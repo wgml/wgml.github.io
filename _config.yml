@@ -17,9 +17,6 @@ defaults:
           url: "/about.html"
           name: "about"
         -
-          url: "/projects.html"
-          name: "projects"
-        -
           url: "/files/resume.pdf"
           name: "resume"
           args: "target=\"_blank\""
