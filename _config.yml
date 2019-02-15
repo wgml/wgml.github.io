@@ -9,6 +9,7 @@ defaults:
       email: "me@wgml.pl"
       repository_url: "https://github.com/wgml/wgml.github.io"
       title: "cat /etc/profile"
+      tags: ["personal", "dev", "web", "blog", "cpp"]
       navbar:
         -
           url: "/"

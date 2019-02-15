@@ -1,5 +1,20 @@
 ---
 ---
+{% if page.description %}
+  {% assign page_description=page.description %}
+{% else %}
+  {% assign page_description="Random bits and pieces" %}
+{% endif %}
+{% if page.header %}
+  {% assign page_header=page.header %}
+{% else %}
+  {% assign page_header=page.title %}
+{% endif %}
+{% if page.tags %}
+  {% assign page_tags=page.tags | join: ' ' %}
+{% else %}
+  {% assign page_tags=site.tags %}
+{% endif %}
 
 <!doctype html>
 
@@ -17,10 +32,15 @@
   </script>
 
   <meta charset="utf8">
-  <title>[{{ page.site_url }}] {% if page.header %}{{ page.header }} {% else %}{{ page.title }}{% endif %}</title>
+  <title>[{{ page.site_url }}] {{ page_header }}</title>
 
-  <meta name="description" content="Random bits">
-  <meta name="author" content="Wojtek Gumula">
+  <meta name="description" content="{{ page_description }}">
+  <meta name="author" content="Wojtek Gumuła">
+  <meta name="keywords" content="{{ page_tags }}"/>
+  <meta content="{{ page.url | absolute_url }}" property="og:url"/>
+  <meta content="{{ page_header }}" property="og:title"/>
+  <meta content="{{ page_description }}" property="og:description"/>
+  <meta property="og:type" content="article" />
 
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/prism.css">

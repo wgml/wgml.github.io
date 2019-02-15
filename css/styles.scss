@@ -4,6 +4,11 @@
 // start content
 /*@import "compass/css3";*/
 
+html {
+  // overflow-y: scroll;
+  width: calc(100vw - 34px);
+}
+
 body {
   background-color: #FFF9F6;
 
@@ -51,7 +56,12 @@ h1 {
 
 h2 {
   font-size: 100%;
-  font-weight: bolder;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 100%;
+  font-weight: normal;
 }
 
 h1:before {
@@ -185,6 +195,28 @@ article pre {
 
 article code {
   background-color: rgb(241, 231, 226);
+}
+
+#markdown-toc::before {
+  content: "Contents";
+  font-weight: bolder;
+}
+
+#markdown-toc ul {
+  list-style: decimal;
+}
+
+#markdown-toc a {
+  background-color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  padding: 1.5em;
+  list-style: decimal;
+  display: inline-block;
 }
 
 .posts li {
