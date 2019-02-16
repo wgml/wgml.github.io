@@ -33,6 +33,3 @@ kramdown:
     disable : true
 sass:
   style: compressed
-plugins:
-  - liquid_reading_time
-  - liquid_pluralize
