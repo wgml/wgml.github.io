@@ -32,4 +32,7 @@ kramdown:
   syntax_highlighter_opts:
     disable : true
 sass:
-    style: compressed
+  style: compressed
+plugins:
+  - liquid_reading_time
+  - liquid_pluralize

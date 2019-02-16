@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-
 <article>
-  <h1>{{ page.header }}
-  <span class="timestamp" style="display: block">{{ page.date | date: '%Y-%m-%d'}}</span></h1>
+  <h1>{{ page.header }}</h1>
+    <span class="article-details monospace">
+      <span>{{ page.date | date: '%Y-%m-%d'}}</span>
+      <span>({{ content | reading_time | pluralize: "minute" }} to read)</span>
+    </span>
   {{ content }}
 </article>
