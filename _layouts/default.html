@@ -3,12 +3,17 @@
 {% if page.description %}
   {% assign page_description=page.description %}
 {% else %}
-  {% assign page_description="Random bits and pieces" %}
+  {% assign page_description=site.description %}
 {% endif %}
 {% if page.header %}
   {% assign page_header=page.header %}
 {% else %}
-  {% assign page_header=page.title %}
+  {% capture page_header %}[{{ site.site_url }}]{% endcapture %}
+{% endif %}
+{% if page.header %}
+  {% assign page_title=page.header %}
+{% else %}
+  {% assign page_title=site.default_title %}
 {% endif %}
 {% if page.tags %}
   {% assign page_tags=page.tags | join: ' ' %}
@@ -22,13 +27,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>[{{ page.site_url }}] {{ page_header }}</title>
+  <title>{{ page_header }}</title>
 
   <meta name="description" content="{{ page_description }}">
-  <meta name="author" content="Wojtek Gumuła">
+  <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{{ page_tags }}"/>
   <meta content="{{ page.url | absolute_url }}" property="og:url"/>
-  <meta content="{{ page_header }}" property="og:title"/>
+  <meta content="{{ page_title }}" property="og:title"/>
   <meta content="{{ page_description }}" property="og:description"/>
   <meta property="og:type" content="article" />
 
@@ -38,11 +43,13 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300,400,700" rel="stylesheet">
   
   <link rel="icon" type="image/png" href="/images/hedgehog-32.png" />
+
+  <link href="{{ '/feed.xml' | absolute_url }}" rel="alternate" type="application/atom+xml">
 </head>
 <body>
   <header>
-    <a href="{{site.url}}" id="root-url">[Wojtek Gumuła]</a>
-    <h1>{{ page.title }}</h1>
+    <a href="{{site.url}}" id="root-url">[{{ site.author }}]</a>
+    <h1>{{ site.headline }}</h1>
 
     <nav id="navbar">
       <ul>
@@ -59,10 +66,10 @@
 
 <footer>
  
-  {{ page.author }}, <span title="Built {{ site.time | date: '%Y-%m-%d %T' }}">{{ site.time | date: '%Y' }}</span>. 
-  <a href="{{ page.repository_url }}">Source</a>.
+  {{ site.author }}, <span title="Built {{ site.time | date: '%Y-%m-%d %T' }}">2018–{{ site.time | date: '%Y' }}</span>. 
+  <a href="{{ site.repository_url }}">Source</a>.
   By the way, you can
-  <a href="mailto:{{ page.email }}">send me a message</a>.
+  <a href="mailto:{{ site.email }}">send me a message</a>.
 </footer>
 
   <script src="/js/prism.js"></script>

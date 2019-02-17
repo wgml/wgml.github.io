@@ -1,14 +1,18 @@
+author: "Wojtek Gumuła"
+default_title: "My personal site and more"
+description: "Random bits and pieces"
+email: "me@wgml.pl"
+headline: "cat /etc/profile"
+repository_url: "https://github.com/wgml/wgml.github.io"
+site_url: "wgml.pl"
+title: "[wgml.pl]"
+url: "https://wgml.pl"
 defaults:
   -
     scope:
       path: ""
     values:
       layout: "default"
-      site_url: "wgml.pl"
-      author: "Wojtek Gumuła"
-      email: "me@wgml.pl"
-      repository_url: "https://github.com/wgml/wgml.github.io"
-      title: "cat /etc/profile"
       tags: ["personal", "dev", "web", "blog", "cpp"]
       navbar:
         -
