@@ -88,5 +88,9 @@
     fathom('trackPageview');
     </script>
     <!-- / Fathom -->
+
+    {% if jekyll.environment == "development" %}
+    <script src="/js/live.js"></script>
+    {% endif %}
 </body>
 </html>
