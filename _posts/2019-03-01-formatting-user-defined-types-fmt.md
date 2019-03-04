@@ -175,8 +175,6 @@ template<typename ParseContext>
 constexpr auto parse(ParseContext& ctx)
 {
   auto fmt_end = std::find(ctx.begin(), ctx.end(), '}');
-
-  auto fmt_end = std::find(ctx.begin(), ctx.end(), '}');
   if (fmt_end != ctx.begin())
   {
     char representation = *ctx.begin();
