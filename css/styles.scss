@@ -237,6 +237,18 @@ article code {
   color: #afafaf;
 }
 
+.article-footnotes:before {
+  content: "- - - - -";
+  font-weight: bold;
+  font-style: normal;
+  display:block;
+}
+
+.article-social {
+  font-style: italic;
+}
+
+
 .timestamp {
   color: #afafaf;
 }

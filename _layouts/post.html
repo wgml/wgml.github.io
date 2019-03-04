@@ -12,4 +12,10 @@ layout: default
       <span>({{ read-time | strip }} to read)</span>
     </span>
   {{ content }}
+
+  {% if page.reddit_url %}
+  <p class="article-social article-footnotes">
+    Discuss this note on <a href="{{ page.reddit_url }}">Reddit</a>.
+  </p>
+  {% endif %}
 </article>
