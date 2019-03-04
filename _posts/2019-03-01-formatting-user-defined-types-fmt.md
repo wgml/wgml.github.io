@@ -2,6 +2,7 @@
 header: Formatting user-defined types with {fmt} library
 categories: dev cpp programming
 layout: post
+reddit_url: "https://www.reddit.com/r/cpp/comments/awsflr/formatting_userdefined_types_with_fmt_library/"
 ---
 
 
@@ -95,8 +96,7 @@ constexpr auto fmt::formatter<complex>::parse(ParseContext& ctx)
 template<typename FormatContext>
 auto fmt::formatter<complex>::format(complex const& number, FormatContext& ctx)
 {
-  fmt::format_to(ctx.out(), "{0}+i{1}", number.a, number.b);
-  return ctx.out();
+  return fmt::format_to(ctx.out(), "{0}+i{1}", number.a, number.b);
 }
 ```
 `parse` assumes no formatting is specified for the type, and `format` outputs the variable in hard-coded formatting.
