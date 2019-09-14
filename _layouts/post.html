@@ -6,16 +6,28 @@ layout: default
 {% endcapture %}
 
 <article>
-  <h1>{{ page.header }}</h1>
+  <h1>{{ page.header | markdownify | strip_html }}</h1>
     <span class="article-details monospace">
       <span>{{ page.date | date: '%Y-%m-%d'}}</span>
       <span>({{ read-time | strip }} to read)</span>
     </span>
   {{ content }}
 
-  {% if page.reddit_url %}
-  <p class="article-social article-footnotes">
-    Discuss this note on <a href="{{ page.reddit_url }}">Reddit</a>.
-  </p>
+  {% if page.reddit_url or page.resources %}
+    <p class="article-social article-footnotes">
+      {% if page.reddit_url %}
+      Discuss this note on <a href="{{ page.reddit_url }}">Reddit</a>.
+      {% endif %}
+    </p>
+    {% if page.resources %}
+    <h2>Additional resources</h2>
+    <p class="article-resources">
+      <ol class="article-resources">
+        {% for resource in page.resources %}
+        <li>{{ resource.desc }} <a href="{{resource.url}}">{{ resource.url }}</a></li>
+        {% endfor %}
+      </ol>
+    </p>
+    {% endif %}
   {% endif %}
 </article>

@@ -55,7 +55,7 @@ One neat feature of `{fmt}` is the possibility to extend it for user-defined typ
 
 For example, given the simple `complex` type, instead of defining the formatting in every place where the objects are printed out, one can specify formatter for the type and use it without any hassle.
 
-```Cpp
+```cpp
 #include <fmt/format.h>
 
 struct complex

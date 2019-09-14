@@ -29,11 +29,8 @@ defaults:
           url: "https://github.com/wgml"
           name: "github"
           args: "target=\"_blank\""
-highlighter: rouge
+highlighter: none
 markdown: kramdown
 permalink: /blog/:title.html
-kramdown:
-  syntax_highlighter_opts:
-    disable : true
 sass:
   style: compressed

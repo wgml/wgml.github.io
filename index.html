@@ -7,7 +7,7 @@
     {% for post in site.posts %}
     {% if post.hidden != true %}
       <li class="post"><span class="timestamp">{{ post.date | date: '%Y-%m-%d'}}</span>
-        <a href="{{ post.url }}">{{ post.header }}</a></li>
+        <a href="{{ post.url }}">{{ post.header | markdownify | strip_html | normalize_whitespace }}</a></li>
     {% endif %}
     {% endfor %}
     {% if site.posts.size == 0 %}

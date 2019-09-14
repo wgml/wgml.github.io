@@ -248,6 +248,20 @@ article code {
   font-style: italic;
 }
 
+.article-resources {
+  display: block;
+  font-style: normal;
+}
+
+article blockquote {
+  border-left: 10px solid #E9D9D3;
+  margin-left: 1.5em;
+  padding-left: 10px;
+}
+article blockquote p {
+  font-style: italic;
+  display: inline;
+}
 
 .timestamp {
   color: #afafaf;
