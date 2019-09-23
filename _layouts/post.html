@@ -24,7 +24,7 @@ layout: default
     <p class="article-resources">
       <ol class="article-resources">
         {% for resource in page.resources %}
-        <li>{{ resource.desc }} (<a href="{{resource.url}}">{{ resource.url }}</a>)</li>
+        <li>{{ resource.desc }} <a href="{{resource.url}}">→</a></li>
         {% endfor %}
       </ol>
     </p>

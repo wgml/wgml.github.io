@@ -54,10 +54,11 @@
 
     <nav id="navbar">
       <ul>
+        {% assign page_url=page.url | remove: ".html" %}
         {% for e in page.navbar %}
         <li>
           {% assign the_url=e.url | remove: ".html" %}
-          <a href="{{ e.url }}"{% if the_url == page.url %} class="active-url"{% endif %} {{ e.args }}>{{ e.name }}</a>
+          <a href="{{ e.url }}"{% if the_url == page_url %} class="active-url"{% endif %} {{ e.args }}>{{ e.name }}</a>
         </li>
         {% endfor %}
       </ul>

@@ -29,6 +29,9 @@ defaults:
           url: "https://github.com/wgml"
           name: "github"
           args: "target=\"_blank\""
+        -
+          url: "/feed.xml"
+          name: "feed"
 highlighter: none
 markdown: kramdown
 permalink: /blog/:title.html

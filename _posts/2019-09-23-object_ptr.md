@@ -1,6 +1,6 @@
 ---
 header: The second missing pointer type -- `object_ptr<T>`
-categories: meta
+categories: dev cpp programming
 layout: post
 resources:
   - url: https://github.com/tvaneerd/isocpp/blob/master/observer_ptr.md
