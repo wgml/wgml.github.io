@@ -1,5 +1,5 @@
 ---
-header: The second missing pointer type -- `object_ptr<T>`
+header: The other missing pointer type -- `object_ptr<T>`
 categories: dev cpp programming
 layout: post
 resources:
