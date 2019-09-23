@@ -39,6 +39,8 @@ pre {
 
 code {
   font-family: 'Roboto Mono', monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .monospace {
