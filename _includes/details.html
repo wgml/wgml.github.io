@@ -1,4 +1,4 @@
 <details open="{% if include.open %}{{ include.open }}{% else %}open{% endif %}">
     <summary>{% if include.title %}{{ include.title }}{% else %}Output{% endif %}</summary>
-    <pre><code class="language-plaintext">{{ include.content }}</code></pre>
+    <pre><code class="language-plaintext">{{ include.content | xml_escape }}</code></pre>
 </details>

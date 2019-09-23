@@ -27,7 +27,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{ page_header }}</title>
+  <title>{{ page_header | markdownify | strip_html | normalize_whitespace }}</title>
 
   <meta name="description" content="{{ page_description }}">
   <meta name="author" content="{{ site.author }}">
@@ -56,7 +56,8 @@
       <ul>
         {% for e in page.navbar %}
         <li>
-          <a href="{{ e.url }}"{% if  e.url == page.url %} class="active-url"{% endif %} {{ e.args }}>{{ e.name }}</a>
+          {% assign the_url=e.url | remove: ".html" %}
+          <a href="{{ e.url }}"{% if the_url == page.url %} class="active-url"{% endif %} {{ e.args }}>{{ e.name }}</a>
         </li>
         {% endfor %}
       </ul>

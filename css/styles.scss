@@ -237,11 +237,19 @@ article code {
   color: #afafaf;
 }
 
+div.footnotes:before {
+  content: "Footnotes";
+}
+
+div.footnotes > ol > li > p {
+  margin: 0;
+}
+
 .article-footnotes:before {
   content: "- - - - -";
   font-weight: bold;
   font-style: normal;
-  display:block;
+  display: block;
 }
 
 .article-social {
