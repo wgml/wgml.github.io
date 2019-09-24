@@ -2,6 +2,7 @@
 header: The other missing pointer type -- `object_ptr<T>`
 categories: dev cpp programming
 layout: post
+reddit_url: "https://www.reddit.com/r/cpp/comments/d88ugt/the_other_missing_pointer_type_object_ptrt"
 resources:
   - url: https://github.com/tvaneerd/isocpp/blob/master/observer_ptr.md
     desc: "Prebuttal for Standardizing observer_ptr"
