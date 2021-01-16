@@ -245,7 +245,7 @@ bool check_resource(ptr_view<Res> resource)
 2 errors generated."{% endcapture %}
 {%include details.html content=compile_error %}
 
-`CTAD`[^3] and used-defined deduction guides could help there but, well, those are for classes only. There was a [paper](https://wg21.link/p1167) to allow deduction guides for functions -- I don't know what feedback it received though.
+`CTAD`[^3] and user-defined deduction guides could help there but, well, those are for classes only. There was a [paper](https://wg21.link/p1167) to allow deduction guides for functions -- I don't know what feedback it received though.
 
 For now, we can avoid such issues with either specifying underlying `element_type`:
 ```cpp
@@ -284,7 +284,7 @@ However, such design might lead to assumptions that the pointer is always valid,
 With that in mind, `valid_ptr` becomes more of a implicit null-check of the argument provided. Maybe it is worth it but there might a better ideas how to solve the parameter nullability problem.
 
 ## Postlude
-As of today, I'm sort of in the *Almost Always `ptr_view`* team. It's just more fit for the use case than `shared_ptr<T> const*` and `T*`.
+As of today, I'm sort of in the *Almost Always `ptr_view`* team. It's just more fit for the use case than `shared_ptr<T> const&` and `T*`.
 
 I hope we get it merged into the standard someday; however, if I am to use it in most contexts, it *really* should get a better (pronounced -- shorter) name -- I feel like 6-8 characters is the most I can invest to use it myself. Any more and the code readability will suffer.
 `CTAD` for functions would be fun, too.
