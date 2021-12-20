@@ -1,0 +1,23 @@
+name: Deploy wgml.pl
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: 206.81.31.204
+          username: wgml
+          key: ${{ secrets.WGML_GUMU_LA_KEY }}
+          script: |
+            cd /home/wgml/wgml.github.io
+            git fetch --all
+            git reset --hard origin/master
+            docker build -t wgml/wgml:latest .
+            docker stop wgml-pl
+            docker rm wgml-pl
+            docker run -d -p 3001:80 --name wgml-pl --restart=always wgml/wgml:latest
