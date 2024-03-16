@@ -4,6 +4,7 @@ WORKDIR /build
 
 COPY . src
 
+ENV JEKYLL_ENV=production
 RUN jekyll build --destination output --source src
 
 FROM nginx:stable-alpine

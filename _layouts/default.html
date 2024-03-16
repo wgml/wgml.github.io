@@ -79,24 +79,9 @@
 </footer>
 
   <script src="/js/prism.js"></script>
-  <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-  <script>
-    (function(f, a, t, h, o, m){
-      a[h]=a[h]||function(){
-        (a[h].q=a[h].q||[]).push(arguments)
-      };
-      o=f.createElement('script'),
-      m=f.getElementsByTagName('script')[0];
-      o.async=1; o.src=t; o.id='fathom-script';
-      m.parentNode.insertBefore(o,m)
-    })(document, window, '//stats.wgml.pl/tracker.js', 'fathom');
-    fathom('set', 'siteId', 'REUCR');
-    fathom('trackPageview');
-    </script>
-    <!-- / Fathom -->
 
-    {% if jekyll.environment == "development" %}
-    <script src="/js/live.js"></script>
-    {% endif %}
+  {% if jekyll.environment == "development" %}
+  <script src="/js/live.js"></script>
+  {% endif %}
 </body>
 </html>
