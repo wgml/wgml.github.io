@@ -1,4 +1,4 @@
-FROM jekyll/jekyll:3.1.6 as builder
+FROM jekyll/jekyll:3.1.6 AS builder
 
 WORKDIR /build
 
